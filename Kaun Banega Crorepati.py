@@ -772,7 +772,7 @@ else:
 # INITIALISING VARIABLES
 q_no = 0
 money = 0
-lifelines = 2
+lifelines50_50 = 2
 
 # MONEY CALCULATOR
 
@@ -857,17 +857,17 @@ while PLAYING:
     
     # User Answer
     
-    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type (l) to use lifeline: ').strip().lower()
+    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type (50) to use 50-50 lifeline: ').strip().lower()
 
     # ANSWER VERIFICATION
     
     # Invalid detection system:
     while True:
-        if user_ans in ['a','b','c','d','q','l']:
+        if user_ans in ['a','b','c','d','q','50']:
             break
         else:
             print('Invalid Input')
-            user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type (l) to use lifeline: ').strip().lower()
+            user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type (50) to use 50-50 lifeline: ').strip().lower()
 
     # Quit
     if user_ans == 'q':
@@ -882,7 +882,7 @@ while PLAYING:
         if play_again == 'YES':
             q_no = 0
             money = 0
-            lifelines = 2
+            lifelines50_50 = 2
             
             print('...STARTING THE GAME AGAIN...')
         else:
@@ -897,7 +897,7 @@ while PLAYING:
         print('Correct Answer!')
         if q_no != 16:
             print('\n','YOU HAVE','₹', money ,'\n')
-            print(f'You have {lifelines} lifeline(s) left')
+            print(f'You have {lifelines50_50} lifeline(s) left')
             print('Next Question: \n')
             
         else:
@@ -926,7 +926,7 @@ while PLAYING:
         if play_again == 'YES':
             q_no = 0
             money = 0
-            lifelines = 2
+            lifelines50_50 = 2
            
             print('...STARTING THE GAME AGAIN...')
         else:
@@ -934,11 +934,11 @@ while PLAYING:
             PLAYING = False
 
     # Lifeline
-    elif user_ans == 'l':
-        if lifelines > 0:
+    elif user_ans == '50':
+        if lifelines50_50 > 0:
             if q_no < 16:
                 print('Lifeline Activated!')
-                lifelines = lifelines - 1
+                lifelines50_50 = lifelines50_50 - 1
                 options_except_correct = ['a','b','c','d']
                 options_except_correct.remove(correct_ans.lower())
                 remove_options1 = random.choice(options_except_correct)
@@ -969,7 +969,7 @@ while PLAYING:
                     if play_again == 'YES':
                         q_no = 0
                         money = 0
-                        lifelines = 2
+                        lifelines50_50 = 2
             
                         print('...STARTING THE GAME AGAIN...')
                     else:
@@ -984,7 +984,7 @@ while PLAYING:
                     print('Correct Answer!')
                     if q_no != 16:
                         print('\n','YOU HAVE','₹', money ,'\n')
-                        print(f'You have {lifelines} lifeline(s) left')
+                        print(f'You have {lifelines50_50} lifeline(s) left')
                         print('Next Question: \n')
             
                     else:
@@ -1012,7 +1012,7 @@ while PLAYING:
                     if play_again == 'YES':
                         q_no = 0
                         money = 0
-                        lifelines = 2
+                        lifelines50_50 = 2
                        
                         print('...STARTING THE GAME AGAIN...')
                     else:
@@ -1023,11 +1023,14 @@ while PLAYING:
                 print('You cannot use a lifeline on the 7 crore question!')
                 # Invalid detection system:
                 while True:
-                    if user_ans in ['a','b','c','d','q','l']:
+                    if user_ans in ['a','b','c','d','q']:
                         break
+                    elif user_ans == '50':
+                        print("Sorry, you cannot use a lifeline on the 7 crore question!")
+                        user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
                     else:
                         print('Invalid Input')
-                        user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type (l) to use lifeline: ').strip().lower()
+                        user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type (50) to use 50-50 lifeline: ').strip().lower()
 
                 # Quit
                 if user_ans == 'q':
@@ -1042,7 +1045,7 @@ while PLAYING:
                     if play_again == 'YES':
                         q_no = 0
                         money = 0
-                        lifelines = 2
+                        lifelines50_50 = 2
 
                         print('...STARTING THE GAME AGAIN...')
                     else:
@@ -1057,7 +1060,7 @@ while PLAYING:
                     print('Correct Answer!')
                     if q_no != 16:
                         print('\n','YOU HAVE','₹', money ,'\n')
-                        print(f'You have {lifelines} lifeline(s) left')
+                        print(f'You have {lifelines50_50} lifeline(s) left')
                         print('Next Question: \n')
 
                     else:
@@ -1086,20 +1089,20 @@ while PLAYING:
                     if play_again == 'YES':
                         q_no = 0
                         money = 0
-                        lifelines = 2
+                        lifelines50_50 = 2
 
                         print('...STARTING THE GAME AGAIN...')
                     else:
                         print('Thank You for Playing!')
                         PLAYING = False
 
-        elif lifelines == 0:
+        elif lifelines50_50 == 0:
             # Invalid detection system:
             while True:
                 if user_ans in ['a','b','c','d','q']:
                     break
-                elif user_ans == 'l':
-                    print("Sorry, you have no lifelines left!")
+                elif user_ans == '50':
+                    print("Sorry, you have no 50-50 lifelines left!")
                     user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
                 else:
                     print('Invalid Input')
@@ -1118,7 +1121,7 @@ while PLAYING:
                 if play_again == 'YES':
                     q_no = 0
                     money = 0
-                    lifelines = 2
+                    lifelines50_50 = 2
                     
                     print('...STARTING THE GAME AGAIN...')
                 else:
@@ -1133,7 +1136,7 @@ while PLAYING:
                 print('Correct Answer!')
                 if q_no != 16:
                     print('\n','YOU HAVE','₹', money ,'\n')
-                    print(f'You have {lifelines} lifeline(s) left')
+                    print(f'You have {lifelines50_50} lifeline(s) left')
                     print('Next Question: \n')
                     
                 else:
@@ -1162,7 +1165,7 @@ while PLAYING:
                 if play_again == 'YES':
                     q_no = 0
                     money = 0
-                    lifelines = 2
+                    lifelines50_50 = 2
                    
                     print('...STARTING THE GAME AGAIN...')
                 else:
