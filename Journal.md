@@ -20,3 +20,11 @@ Several times there was an error showing in only one particular line of the code
 - Improving these Lifelines
 - Improving the output
 - Improving the clarity of code
+
+##  PREVIEW
+  ### Using The Lifeline
+  <img width="859" height="371" alt="Devlog1" src="https://github.com/user-attachments/assets/a366dfff-d239-4ecd-b3cb-5119861c0f91" />
+  
+  ### If Lifelines are finished
+  <img width="800" height="278" alt="image" src="https://github.com/user-attachments/assets/d254b437-f8dd-4eb5-b805-5486538f6f9c" />
+
