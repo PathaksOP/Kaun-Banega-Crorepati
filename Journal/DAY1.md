@@ -21,7 +21,7 @@ Several times there was an error showing in only one particular line of the code
 - Improving the output
 - Improving the clarity of code
 
-##  PREVIEW
+## 👀PREVIEW
   ### Using The Lifeline
   <img width="859" height="371" alt="Devlog1" src="https://github.com/user-attachments/assets/a366dfff-d239-4ecd-b3cb-5119861c0f91" />
   
