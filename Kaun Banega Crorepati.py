@@ -1107,10 +1107,249 @@ while PLAYING:
                     break
                 elif user_ans == '50':
                     print("Sorry, you have no 50-50 lifelines left!")
-                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type(ap) to use Audience Poll:').strip().lower()
+                elif user_ans == 'ap':
+                    if lifelines_Audience_poll > 0:
+                        if q_no < 16:
+                            print('Lifeline Activated!')
+                            lifelines_Audience_poll = lifelines_Audience_poll - 1
+                            except_correct_ans_list = ['a','b','c','d']
+                            except_correct_ans_list.remove(correct_ans.lower())
+                            poll_result = random.choice([correct_ans.lower()]*9 + except_correct_ans_list)
+                            print(f'The audience thinks the correct answer is option {poll_result.upper()}')
+                            user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit : ').strip().lower()
+                            while True:
+                                if user_ans in ['a','b','c','d','q']:
+                                    break
+                                else:
+                                    print('Invalid Input')
+                                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit : ').strip().lower()
+                            # Quit
+                            if user_ans == 'q':
+                                print('You have quitted the game')
+                                print('You will take ₹',money,'home')
+                                while True:
+                                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                    if play_again in ('YES','NO'):
+                                        break
+                                    else:
+                                        print('Invalid Input')
+                                if play_again == 'YES':
+                                    q_no = 0
+                                    money = 0
+                                    lifelines_Audience_poll = 2
+                        
+                                    print('...STARTING THE GAME AGAIN...')
+                                else:
+                                    print('Thank You for Playing!')
+                                    PLAYING = False
+                            
+                            # Correct
+                            elif user_ans == correct_ans.lower():
+                                q_no = q_no + 1
+                    
+                                money = money_counter(q_no)
+                                print('Correct Answer!')
+                                if q_no != 16:
+                                    print('\n','YOU HAVE','₹', money ,'\n')
+                                    print(f'You have {lifelines50_50} 50-50 lifeline(s) left')
+                                    print(f'You have {lifelines_Audience_poll} Audience Poll lifeline(s) left')
+                                    print('Next Question: \n')
+                        
+                                else:
+                                    print('YOU ARE THE WINNER!!!')
+                                    print('SEVEN CRORES!!!!')
+                                    PLAYING = False
+                            
+                            # Incorrect
+                            elif user_ans in ['a','b','c','d']:
+                            
+                                print('Wrong Answer! You lost. Better Luck Next Time.')
+                                if q_no>=12:
+                                    money = 1250000
+                                elif q_no>=10:
+                                    money = 500000
+                                elif q_no>=5:
+                                    money = 25000
+                                else:
+                                    money = 0
+                                print('You will take ₹',money,'home')
+                                while True:
+                                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                    if play_again in ('YES','NO'):
+                                        break
+                                    else:
+                                         print('Invalid Input')
+                                if play_again == 'YES':
+                                    q_no = 0
+                                    money = 0
+                                    lifelines_Audience_poll = 2
+                        
+                                    print('...STARTING THE GAME AGAIN...')
+                                else:
+                                    print('Thank You for Playing!')
+                                    PLAYING = False
+                        
+                        else:
+                            print('You cannot use a lifeline on the 7 crore question!')
+                            # Invalid detection system:
+                            while True:
+                                if user_ans in ['a','b','c','d','q']:
+                                    break
+                                elif user_ans == '50':
+                                    print("Sorry, you cannot use a lifeline on the 7 crore question!")
+                                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                                else:
+                                    print('Invalid Input')
+                                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit, type (50) to use 50-50 lifeline or type (AP) to use Audience Poll: ').strip().lower()
+            
+                            # Quit
+                            if user_ans == 'q':
+                                print('You have quitted the game')
+                                print('You will take ₹',money,'home')
+                                while True:
+                                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                    if play_again in ('YES','NO'):
+                                        break
+                                    else:
+                                         print('Invalid Input')
+                                if play_again == 'YES':
+                                    q_no = 0
+                                    money = 0
+                                    lifelines50_50 = 2
+            
+                                    print('...STARTING THE GAME AGAIN...')
+                                else:
+                                    print('Thank You for Playing!')
+                                    PLAYING = False
+            
+                            # Correct
+                            elif user_ans == correct_ans.lower():
+                                q_no = q_no + 1
+            
+                                money = money_counter(q_no)
+                                print('Correct Answer!')
+                                if q_no != 16:
+                                    print('\n','YOU HAVE','₹', money ,'\n')
+                                    print(f'You have {lifelines50_50} 50-50 lifeline(s) left')
+                                    print(f'You have {lifelines_Audience_poll} Audience Poll lifeline(s) left')
+                                    print('Next Question: \n')
+            
+                                else:
+                                    print('YOU ARE THE WINNER!!!')
+                                    print('SEVEN CRORES!!!!')
+                                    PLAYING = False
+            
+                            # Incorrect
+                            elif user_ans in ['a','b','c','d']:
+                                print('Wrong Answer! You lost. Better Luck Next Time.')
+                                if q_no>=12:
+                                    money = 1250000
+                                elif q_no>=10:
+                                    money = 500000
+                                elif q_no>=5:
+                                    money = 25000
+                                else:
+                                    money = 0
+                                print('You will take ₹',money,'home')
+                                while True:
+                                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                    if play_again in ('YES','NO'):
+                                        break
+                                    else:
+                                         print('Invalid Input')
+                                if play_again == 'YES':
+                                    q_no = 0
+                                    money = 0
+                                    lifelines50_50 = 2
+            
+                                    print('...STARTING THE GAME AGAIN...')
+                                else:
+                                    print('Thank You for Playing!')
+                                    PLAYING = False
+            
+                    elif lifelines_Audience_poll == 0:
+                        # Invalid detection system:
+                        while True:
+                            if user_ans in ['a','b','c','d','q']:
+                                break
+                            elif user_ans == 'ap':
+                                print("Sorry, you have no Audience Poll lifelines left!")
+                                user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                            else:
+                                print('Invalid Input')
+                                user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                    
+                        # Quit
+                        if user_ans == 'q':
+                            print('You have quitted the game')
+                            print('You will take ₹',money,'home')
+                            while True:
+                                play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                if play_again in ('YES','NO'):
+                                    break
+                                else:
+                                     print('Invalid Input')
+                            if play_again == 'YES':
+                                q_no = 0
+                                money = 0
+                                lifelines50_50 = 2
+                                lifelines_Audience_poll = 2
+                                
+                                
+                                print('...STARTING THE GAME AGAIN...')
+                            else:
+                                print('Thank You for Playing!')
+                                PLAYING = False
+                        
+                        # Correct
+                        elif user_ans == correct_ans.lower():
+                            q_no = q_no + 1
+                            
+                            money = money_counter(q_no)
+                            print('Correct Answer!')
+                            if q_no != 16:
+                                print('\n','YOU HAVE','₹', money ,'\n')
+                                print(f'You have {lifelines50_50} 50-50 lifeline(s) left')
+                                print(f'You have {lifelines_Audience_poll} lifeline(s) left')
+                                print('Next Question: \n')
+                                
+                            else:
+                                print('YOU ARE THE WINNER!!!')
+                                print('SEVEN CRORES!!!!')
+                                PLAYING = False
+                            
+                        # Incorrect
+                        elif user_ans in ['a','b','c','d']:
+                            print('Wrong Answer! You lost. Better Luck Next Time.')
+                            if q_no>=12:
+                                money = 1250000
+                            elif q_no>=10:
+                                money = 500000
+                            elif q_no>=5:
+                                money = 25000
+                            else:
+                                money = 0
+                            print('You will take ₹',money,'home')
+                            while True:
+                                play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                if play_again in ('YES','NO'):
+                                    break
+                                else:
+                                    print('Invalid Input')
+                            if play_again == 'YES':
+                                q_no = 0
+                                money = 0
+                                lifelines_Audience_poll = 2
+                                lifelines50_50 = 2
+            
+                                print('...STARTING THE GAME AGAIN...')
+                            else:
+                                print('Thank You for Playing!')
+                                PLAYING = False
                 else:
                     print('Invalid Input')
-                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type(ap) to use Audience Poll: ').strip().lower()
         
             # Quit
             if user_ans == 'q':
@@ -1348,10 +1587,254 @@ while PLAYING:
                     break
                 elif user_ans == 'ap':
                     print("Sorry, you have no Audience Poll lifelines left!")
-                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type(50) to use 50-50 lifeline: ').strip().lower()
+                elif user_ans == '50':
+                    if lifelines50_50 > 0:
+                        if q_no < 16:
+                            print('Lifeline Activated!')
+                            lifelines50_50 = lifelines50_50 - 1
+                            options_except_correct = ['a','b','c','d']
+                            options_except_correct.remove(correct_ans.lower())
+                            remove_options1 = random.choice(options_except_correct)
+                            options_except_correct.remove(remove_options1)
+                            remove_options2 = random.choice(options_except_correct)
+                            options_left = ['a','b','c','d']
+                            options_left.remove(remove_options1)
+                            options_left.remove(remove_options2)
+                           
+                            print(f'Options {remove_options1.upper()} and {remove_options2.upper()} are wrong. The correct answer is in ({options_left[0].upper()}, {options_left[1].upper()})')
+                            user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit : ').strip().lower()
+                            while True:
+                                if user_ans in ['a','b','c','d','q']:
+                                    break
+                                else:
+                                    print('Invalid Input')
+                                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit : ').strip().lower()
+                            # Quit
+                            if user_ans == 'q':
+                                print('You have quitted the game')
+                                print('You will take ₹',money,'home')
+                                while True:
+                                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                    if play_again in ('YES','NO'):
+                                        break
+                                    else:
+                                        print('Invalid Input')
+                                if play_again == 'YES':
+                                    q_no = 0
+                                    money = 0
+                                    lifelines50_50 = 2
+                        
+                                    print('...STARTING THE GAME AGAIN...')
+                                else:
+                                    print('Thank You for Playing!')
+                                    PLAYING = False    
+            
+                            # Correct
+                            elif user_ans == correct_ans.lower():
+                                q_no = q_no + 1
+                    
+                                money = money_counter(q_no)
+                                print('Correct Answer!')
+                                if q_no != 16:
+                                    print('\n','YOU HAVE','₹', money ,'\n')
+                                    print(f'You have {lifelines50_50} 50-50 lifeline(s) left')
+                                    print(f'You have {lifelines_Audience_poll} Audience Poll lifeline(s) left')
+                                    print('Next Question: \n')
+                        
+                                else:
+                                    print('YOU ARE THE WINNER!!!')
+                                    print('SEVEN CRORES!!!!')
+                                    PLAYING = False
+                            # Incorrect
+                            elif user_ans in ['a','b','c','d']:
+                                print('Wrong Answer! You lost. Better Luck Next Time.')
+                                if q_no>=12:
+                                    money = 1250000
+                                elif q_no>=10:
+                                    money = 500000
+                                elif q_no>=5:
+                                    money = 25000
+                                else:
+                                    money = 0
+                                print('You will take ₹',money,'home')
+                                while True:
+                                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                    if play_again in ('YES','NO'):
+                                        break
+                                    else:
+                                         print('Invalid Input')
+                                if play_again == 'YES':
+                                    q_no = 0
+                                    money = 0
+                                    lifelines50_50 = 2
+                                   
+                                    print('...STARTING THE GAME AGAIN...')
+                                else:
+                                    print('Thank You for Playing!')
+                                    PLAYING = False
+                            
+                        else:
+                            print('You cannot use a lifeline on the 7 crore question!')
+                            # Invalid detection system:
+                            while True:
+                                if user_ans in ['a','b','c','d','q']:
+                                    break
+                                elif user_ans == '50':
+                                    print("Sorry, you cannot use a lifeline on the 7 crore question!")
+                                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                                else:
+                                    print('Invalid Input')
+                                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit, type (50) to use 50-50 lifeline or type (AP) to use Audience Poll: ').strip().lower()
+            
+                            # Quit
+                            if user_ans == 'q':
+                                print('You have quitted the game')
+                                print('You will take ₹',money,'home')
+                                while True:
+                                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                    if play_again in ('YES','NO'):
+                                        break
+                                    else:
+                                         print('Invalid Input')
+                                if play_again == 'YES':
+                                    q_no = 0
+                                    money = 0
+                                    lifelines50_50 = 2
+            
+                                    print('...STARTING THE GAME AGAIN...')
+                                else:
+                                    print('Thank You for Playing!')
+                                    PLAYING = False
+            
+                            # Correct
+                            elif user_ans == correct_ans.lower():
+                                q_no = q_no + 1
+            
+                                money = money_counter(q_no)
+                                print('Correct Answer!')
+                                if q_no != 16:
+                                    print('\n','YOU HAVE','₹', money ,'\n')
+                                    print(f'You have {lifelines50_50} 50-50 lifeline(s) left')
+                                    print(f'You have {lifelines_Audience_poll} Audience Poll lifeline(s) left')
+                                    print('Next Question: \n')
+            
+                                else:
+                                    print('YOU ARE THE WINNER!!!')
+                                    print('SEVEN CRORES!!!!')
+                                    PLAYING = False
+            
+                            # Incorrect
+                            elif user_ans in ['a','b','c','d']:
+                                print('Wrong Answer! You lost. Better Luck Next Time.')
+                                if q_no>=12:
+                                    money = 1250000
+                                elif q_no>=10:
+                                    money = 500000
+                                elif q_no>=5:
+                                    money = 25000
+                                else:
+                                    money = 0
+                                print('You will take ₹',money,'home')
+                                while True:
+                                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                    if play_again in ('YES','NO'):
+                                        break
+                                    else:
+                                         print('Invalid Input')
+                                if play_again == 'YES':
+                                    q_no = 0
+                                    money = 0
+                                    lifelines50_50 = 2
+            
+                                    print('...STARTING THE GAME AGAIN...')
+                                else:
+                                    print('Thank You for Playing!')
+                                    PLAYING = False
+            
+                    elif lifelines50_50 == 0:
+                        # Invalid detection system:
+                        while True:
+                            if user_ans in ['a','b','c','d','q']:
+                                break
+                            elif user_ans == '50':
+                                print("Sorry, you have no 50-50 lifelines left!")
+                                user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                            else:
+                                print('Invalid Input')
+                                user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                    
+                        # Quit
+                        if user_ans == 'q':
+                            print('You have quitted the game')
+                            print('You will take ₹',money,'home')
+                            while True:
+                                play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                if play_again in ('YES','NO'):
+                                    break
+                                else:
+                                     print('Invalid Input')
+                            if play_again == 'YES':
+                                q_no = 0
+                                money = 0
+                                lifelines50_50 = 2
+                                lifelines_Audience_poll = 2
+                                
+                                print('...STARTING THE GAME AGAIN...')
+                            else:
+                                print('Thank You for Playing!')
+                                PLAYING = False
+                        
+                        # Correct
+                        elif user_ans == correct_ans.lower():
+                            q_no = q_no + 1
+                            
+                            money = money_counter(q_no)
+                            print('Correct Answer!')
+                            if q_no != 16:
+                                print('\n','YOU HAVE','₹', money ,'\n')
+                                print(f'You have {lifelines50_50} 50-50 lifeline(s) left')
+                                print(f'You have {lifelines_Audience_poll} Audience Poll lifeline(s) left')
+                                print('Next Question: \n')
+                                
+                            else:
+                                print('YOU ARE THE WINNER!!!')
+                                print('SEVEN CRORES!!!!')
+                                PLAYING = False
+                            
+                        # Incorrect
+                        elif user_ans in ['a','b','c','d']:
+                            print('Wrong Answer! You lost. Better Luck Next Time.')
+                            if q_no>=12:
+                                money = 1250000
+                            elif q_no>=10:
+                                money = 500000
+                            elif q_no>=5:
+                                money = 25000
+                            else:
+                                money = 0
+                            print('You will take ₹',money,'home')
+                            while True:
+                                play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                                if play_again in ('YES','NO'):
+                                    break
+                                else:
+                                     print('Invalid Input')
+                            if play_again == 'YES':
+                                q_no = 0
+                                money = 0
+                                lifelines50_50 = 2
+                                lifelines_Audience_poll = 2
+                                
+                               
+                                print('...STARTING THE GAME AGAIN...')
+                            else:
+                                print('Thank You for Playing!')
+                                PLAYING = False
+
                 else:
                     print('Invalid Input')
-                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit: ').strip().lower()
+                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type(50) to use 50-50 lifeline: ').strip().lower()
         
             # Quit
             if user_ans == 'q':
