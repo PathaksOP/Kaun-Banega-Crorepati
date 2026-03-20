@@ -1107,7 +1107,7 @@ while PLAYING:
                     break
                 elif user_ans == '50':
                     print("Sorry, you have no 50-50 lifelines left!")
-                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type(ap) to use Audience Poll:').strip().lower()
+                    user_ans = input('Enter Your Answer(a/b/c/d), type(q) to Quit or type(ap) to use Audience Poll: ').strip().lower()
                 elif user_ans == 'ap':
                     if lifelines_Audience_poll > 0:
                         if q_no < 16:
