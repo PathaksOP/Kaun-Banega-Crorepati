@@ -1544,22 +1544,22 @@ while PLAYING:
             else:
                 money = 0
                 print(f'Now You will take ₹{money} home.')
-                while True:
-                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
-                    if play_again in ('YES','NO'):
-                        break
-                    else:
-                        print('Invalid Input')
-                if play_again == 'YES':
-                    q_no = 0
-                    money = 0
-                    lifelines50_50 = 2
-                    PLAYING = True
-            
-                    print('...STARTING THE GAME AGAIN...')
+            while True:
+                play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                if play_again in ('YES','NO'):
+                    break
                 else:
-                    print('Thank You for Playing!')
-                    PLAYING = False
+                    print('Invalid Input')
+            if play_again == 'YES':
+                q_no = 0
+                money = 0
+                lifelines50_50 = 2
+                PLAYING = True
+        
+                print('...STARTING THE GAME AGAIN...')
+            else:
+                print('Thank You for Playing!')
+                PLAYING = False
         if user_ans == 'q':
             print('Sorry, but you took too long to take this decision!')
             if q_no>=12:
@@ -1589,22 +1589,22 @@ while PLAYING:
             else:
                 money = 0
                 print(f'Now You will take ₹{money} home.')
-                while True:
-                    play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
-                    if play_again in ('YES','NO'):
-                        break
-                    else:
-                        print('Invalid Input')
-                if play_again == 'YES':
-                    q_no = 0
-                    money = 0
-                    lifelines50_50 = 2
-                    PLAYING = True
-            
-                    print('...STARTING THE GAME AGAIN...')
+            while True:
+                play_again = input('Do You Want To Play Again? (yes/no): ').upper().strip(' ')
+                if play_again in ('YES','NO'):
+                    break
                 else:
-                    print('Thank You for Playing!')
-                    PLAYING = False
+                    print('Invalid Input')
+            if play_again == 'YES':
+                q_no = 0
+                money = 0
+                lifelines50_50 = 2
+                PLAYING = True
+        
+                print('...STARTING THE GAME AGAIN...')
+            else:
+                print('Thank You for Playing!')
+                PLAYING = False
         if user_ans == 'q':
             print('Sorry, but you took too long to take this decision!')
             if q_no>=12:
