@@ -19,3 +19,11 @@ Not many challenges faced today. I had to do a lot of navigation through so many
 ## 🚀NEXT GOALS
 - Improve code by adding more functions
 - Use the concepts learned today
+
+## 👀PREVIEW
+
+### Using 50-50 after finishing Audience poll lifelines and producing an invalid input
+<img width="1309" height="343" alt="Devlog3 1" src="https://github.com/user-attachments/assets/87db14ae-d8c7-4629-ad8c-e2de0f6ea292" />
+
+### Using Audience poll after finishing 50-50 lifelines and producing an invalid input
+<img width="1282" height="340" alt="Devlog3 2" src="https://github.com/user-attachments/assets/4497c8bf-639a-4b21-a814-7fdaa78a0733" />
