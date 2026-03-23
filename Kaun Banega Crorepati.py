@@ -1649,5 +1649,3 @@ while PLAYING:
         else:
             print('Thank You for Playing!')
             PLAYING = False
-
-    print('Bye - Bye! Have a nice day ahead.    ')
