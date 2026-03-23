@@ -10,7 +10,9 @@ This is a fun quiz game made on python similar to **Kaun Banega Crorepati** or *
 
 - **Input Validation**
 
-- **Lifelines**
+- **Time Regulation**
+
+- **Lifelines {50-50 & Audience Poll}**
 
 - Score upto **7 crores / 70 million**
 
@@ -22,7 +24,7 @@ This is a fun quiz game made on python similar to **Kaun Banega Crorepati** or *
 <br><br>
 - Questions include **History(majorly Indian History), Geography, General Science & General Knowledge**.
 <br><br>
-- The 1st Question rewards you 5000 Rs (or points) and gradually going up to the 16th Question which rewards you **7 crore Rs (70 million pionts)**.
+- The 1st Question rewards you 5000 Rs (or points) and gradually going up to the 16th Question which rewards you **7 crore Rs (70 million points)**.
 <br><br>
 - There are **checkpoints** at Question 5, 10, & 12. If you lose after after any checkpoint you will get the money rewarded at the checkpoint.
 <br><br>
@@ -30,9 +32,17 @@ This is a fun quiz game made on python similar to **Kaun Banega Crorepati** or *
 <br><br>
 - If you answer incorrectly, you will **lose all the money** (if you did not reach any checkpoint).
 <br><br>
-- You have to type a/b/c/d for the answer or 'q' for quiting.
+- There are **4 lifelines** available {2 - 50-50 lifelines & 2 - Audience Polls}.
 <br><br>
-- If you type anything else, there is a system for **invalid input detection** & you will have to type again.
+- When 50-50 lifeline is activated, **2 wrong options will be eliminated**.
+<br><br>
+- When Audience Poll is activated, there will be a **poll in the Audience** and the option which will be voted in majority for correct answer will be displayed { there is a 75% chance that the answer by the Audience is correct}.
+<br><br>
+- If you answer **too late** ( Questions 1-5 : 30 seconds, Questions 6-10 : 60 seconds, Questions 11-16 : no time limit ), you will **lose** & get the money corresponding to the previous checkpoint.
+<br><br>
+- You have to type **a/b/c/d** for the answer, **'q'** for quiting, **'50'** for 50-50 lifeline & **'AP'** for Audience Poll.
+<br><br>
+- If you type anything else, there is a system for **Invalid Input Detection** & you will have to type again.
 
 ## ▶️ How to Run
 
@@ -52,15 +62,15 @@ This is a fun quiz game made on python similar to **Kaun Banega Crorepati** or *
 
 - Building **Invalid Input Detection** System
 
-- Build **Neat & Clean Logical** Code
+- Using **Random** & **Time** modules
+
+- Using **Functions**
+
+- Build **Neat & Clean, Logical** Code
 
 ## 📌 Future Improvements
 
-- Timer ⏳
-
 - Better UI
-
-- More questions
 
 - Sound effects 🔊
 
