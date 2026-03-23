@@ -4,7 +4,20 @@ import time
 # INTRODUCTION
 
 print(('~~~WELCOME TO KAUN BANEGA CROREPATI !~~~').center(500))
-print('RULES : Questions will be displayed on your computer screen along with 4 options in which one of the options will be the correct option. \n        Type the correct option (a/b/c/d). \n        For every correct Answer you will go up a level and get more money. \n        There will be checkpoints at question 5 , 10 and 12. \n        If you answer incorrectly, you will get the money in the previous checkpoint. \n        To quit at any question and take away the money type (Q). \n        GOOD LUCK! \n')
+print('RULES : - Questions will be displayed on your computer screen along with 4 options in which one of the options will be the correct option. \n\
+        - Type the correct option (a/b/c/d).\n\
+        - For every correct Answer you will go up a level and get more money.\n\
+        - There will be checkpoints at question 5 , 10 and 12.\n\
+        - If you answer incorrectly, you will get the money corresponding to the previous checkpoint.\n\
+        - If you answer too late ( Questions 1-5 30 seconds, Questions 6-10 60 seconds, Questions 11-16 (no time limit)), you will lose & get the \n\
+          money corresponding to the previous checkpoint.\n\
+        - There are 4 lifelines {2 - 50-50 lifelines & 2 - Audience Poll}\n\
+        - In 50-50 lifeline, 2 wrong options will be eliminated. To use it, type (50)\n\
+        - In Audience Poll lifeline, there will be a poll in the Audience & the option which will get majority votes for being correct will be \n\
+          displayed. To use it, type (AP)\n\
+        - To quit at any question and take away the money you have won, type (Q). \n\
+        - GOOD LUCK! \n\
+              ')
 
 # QUESTION BANK
 
@@ -1560,7 +1573,7 @@ while PLAYING:
             else:
                 print('Thank You for Playing!')
                 PLAYING = False
-        if user_ans == 'q':
+        elif user_ans == 'q':
             print('Sorry, but you took too long to take this decision!')
             if q_no>=12:
                 money = 1250000
@@ -1637,4 +1650,4 @@ while PLAYING:
             print('Thank You for Playing!')
             PLAYING = False
 
-    
+    print('Bye - Bye! Have a nice day ahead.    ')
