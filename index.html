@@ -11,9 +11,6 @@
     :root {
       --gold: #f5c518;
       --gold-dark: #c9a000;
-      --gold-light: #ffe97a;
-      --blue-deep: #03045e;
-      --blue-mid: #0077b6;
       --blue-glow: #00b4d8;
       --white: #f0f0f0;
       --bg: #020817;
@@ -25,19 +22,15 @@
       background: var(--bg);
       color: var(--white);
       font-family: 'Rajdhani', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* Background stars */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image:
+      background:
         radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.6), transparent),
-        radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.4), transparent),
-        radial-gradient(600px 600px at 50% 50%, rgba(0,119,182,0.08), transparent);
+        radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.4), transparent);
       z-index: 0;
     }
 
@@ -88,6 +81,12 @@
       border: 1px solid rgba(255,255,255,0.1);
       padding: 15px;
       border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
     }
 
     .feature h3 {
@@ -118,6 +117,7 @@
       text-decoration: none;
       border-radius: 30px;
       font-weight: bold;
+      display: inline-block;
     }
 
     .primary {
@@ -150,22 +150,22 @@
   <div class="features">
     <div class="feature">
       <h3>🎮 Real Gameplay</h3>
-      <p>Multiple choice quiz with real KBC-style flow</p>
+      <p>Full KBC-style quiz system with multiple levels</p>
     </div>
 
     <div class="feature">
       <h3>🆘 Lifelines</h3>
-      <p>2x 50-50 and 2x Audience Poll</p>
+      <p>2x 50-50 and 2x Audience Poll implemented</p>
     </div>
 
     <div class="feature">
-      <h3>⏱️ Timers</h3>
-      <p>30s / 60s limits like actual show</p>
+      <h3>⏱️ Timed Game</h3>
+      <p>30s and 60s limits like real KBC</p>
     </div>
 
     <div class="feature">
       <h3>🐍 Python Project</h3>
-      <p>Massive multi-level question system</p>
+      <p>Massive question bank + advanced logic</p>
     </div>
   </div>
 
@@ -175,17 +175,17 @@
   </div>
 
   <div class="cta">
-    <a href="https://github.com/PathaksOP/kbc-python-game" class="btn primary" target="_blank">
+    <a href="https://github.com/PathaksOP/Kaun-Banega-Crorepati" class="btn primary" target="_blank">
       ⭐ View Code
     </a>
 
-    <a href="https://github.com/PathaksOP/kbc-python-game/archive/refs/heads/main.zip" class="btn secondary">
-      ⬇️ Download
+    <a href="https://github.com/PathaksOP/Kaun-Banega-Crorepati#readme" class="btn secondary" target="_blank">
+      📖 How to Play
     </a>
   </div>
 
   <p style="margin-top:15px; font-size:13px; opacity:0.7;">
-    ⚠️ Run locally using Python (Terminal game)
+    ⚠️ This game runs in Python (Terminal). Clone & run locally to play.
   </p>
 
   <div class="footer">
